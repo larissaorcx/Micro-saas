@@ -11,7 +11,8 @@ export async function POST(req : NextRequest){
     }
 
     const metadata = {
-        testId
+        testId,
+        price
     }
 
     try{
@@ -19,8 +20,8 @@ export async function POST(req : NextRequest){
            line_items: [{price, quantity: 1}],
            mode: "payment",
            payment_method_types: ["card", "boleto"], 
-           success_url: `${req.headers.get("origin")}/success`,
-           cancel_url: `${req.headers.get("origin")}`,
+           success_url: `${req.headers.get("Origin")}/success`,
+           cancel_url: `${req.headers.get("Origin")}/cancel`,
         //    custumer: testId
         ...(userEmail && {customer_email: userEmail}),
         metadata
