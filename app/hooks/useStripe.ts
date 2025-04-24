@@ -24,11 +24,11 @@ export function useStripe(){
                     "Content-Type" : "application/json"
                 },
                 body: JSON.stringify(checkoutData)
-            }),
+            })
 
             const data = await response.json()
 
-            await stripe.redirectToCheckout({sessionId: data.id})
+            await stripe.redirectToCheckout({sessionId: data.sessionId})
 
         }catch(error){
             console.log(error)
@@ -45,11 +45,11 @@ export function useStripe(){
                     "Content-Type" : "application/json"
                 },
                 body: JSON.stringify(checkoutData)
-            }),
+            })
 
             const data = await response.json()
 
-            await stripe.redirectToCheckout({sessionId: data.id})
+            await stripe.redirectToCheckout({sessionId: data.sessionId})
 
         }catch(error){
             console.log(error)
@@ -63,7 +63,7 @@ export function useStripe(){
             headers: {
                 "Content-Type" : "application/json"
             },
-        }),
+        })
 
         const data = await response.json()
 
