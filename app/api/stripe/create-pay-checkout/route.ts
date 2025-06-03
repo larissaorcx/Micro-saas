@@ -29,7 +29,7 @@ export async function POST(req : NextRequest){
         })
 
         if(!session){
-            NextResponse.json({error: "Session URL not found"}, {status: 500})
+            return NextResponse.json({error: "Session URL not found"}, {status: 500})
         }
 
         return NextResponse.json({sessionId: session.id}, {status: 200})
