@@ -36,6 +36,6 @@ export async function POST(req : NextRequest){
 
     }catch(error){
         console.log(error)
-        return NextResponse.error
+        return NextResponse.error()
     }
 }
