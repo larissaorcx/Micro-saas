@@ -37,9 +37,9 @@ export async function POST(req : NextRequest){
                 },
                 auto_return: "approved", //retorno automático
                 back_urls:{
-                    success: `${process.env.NEXT_PUBLIC_URL}/api/mercado-pago/pending`, //url de sucesso
-                    pending: `${process.env.NEXT_PUBLIC_URL}/api/mercado-pago/pending`, //url de pendência
-                    failure: `${process.env.NEXT_PUBLIC_URL}/api/mercado-pago/pending`, //url de falha
+                    success: `${req.headers.get("origin")}/api/mercado-pago/pending`, //url de sucesso
+                    pending: `${req.headers.get("origin")}/api/mercado-pago/pending`, //url de pendência
+                    failure: `${req.headers.get("origin")}/api/mercado-pago/pending`, //url de falha
                 },
             }
         });
